@@ -35,6 +35,12 @@ Some points to note:
     pip install -r requirements/base.txt -r requirements/dev.txt
 ```
 
+4. Create .env file:
+
+```bash
+    cp .env.example .env
+```
+
 4. Run app
 
 ```bash
