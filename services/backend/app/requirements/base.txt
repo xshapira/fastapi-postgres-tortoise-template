@@ -2,9 +2,7 @@ fastapi
 uvicorn
 inflection
 asyncpg
-functools
 tortoise-orm
 fastapi-utils
-psycopg2-binary
 python-dotenv
 aerich
