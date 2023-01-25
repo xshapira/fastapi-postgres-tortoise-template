@@ -13,7 +13,7 @@ router = APIRouter(
 @router.post(
     f"/note",
     response_model=NoteGet,
-    status_code=status.HTTP_200_OK,
+    status_code=status.HTTP_201_CREATED,
     description=f"Create Note"
 )
 async def create(item: NoteCreate) -> NoteGet:

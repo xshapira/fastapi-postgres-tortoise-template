@@ -49,3 +49,10 @@ Run:
 ## View Swagger docs
 
 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+## Tests
+
+NB! Navigate to the app folder:
+
+`cd fastapi-postgres-tortoise-template/services/backend/app`
+`pytest -vv`
