@@ -4,5 +4,6 @@ inflection
 asyncpg
 tortoise-orm
 fastapi-utils
+psycopg2-binary
 python-dotenv
 aerich
