@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15-alpine
+    restart: always
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_INITDB_ARGS=--auth-host=scram-sha-256
+      - POSTGRES_HOST_AUTH_METHOD=scram-sha-256
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=example_app_db
+      - POSTGRES_PORT=5432
+    ports:
+      # Expose on 6543 to prevent conflict with local
+      - '6543:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  backend:
+    depends_on:
+      - db
+    build: ./services/backend
+    working_dir: /backend/app
+    restart: always
+    ports:
+      - '8000:8000'
+    environment:
+      - WATCHFILES_FORCE_POLLING=true
+      - PYTHONDONTWRITEBYTECODE=1
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_NAME=example_app_db
+      - REDIS=redis
+    command: uvicorn src.main:app --host=0.0.0.0 --port=8000 --reload --log-level 'debug'
+    volumes:
+      - ./services/backend/app:/backend/app
+      - /backend/app/.ignored
+volumes:
+  postgres_data:
+    driver: local
+  app_data:
+    driver: local

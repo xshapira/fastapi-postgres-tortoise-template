@@ -1,0 +1,7 @@
+[tool.aerich]
+tortoise_orm = "src.database.config.TORTOISE_CONFIG"
+location = "src/database/migrations"
+src_folder = "./."
+
+[tool.pytest.ini_options]
+cache_dir = ".ignored/.pytest_cache"
