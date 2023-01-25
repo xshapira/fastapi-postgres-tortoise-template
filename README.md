@@ -36,6 +36,7 @@ NB! Navigate to app folder:
 Create & Activate virtual environment:
 
 `python -m venv ./ignored/venv`
+
 `source ./ignored/venv/bin/activate`
 
 Install dependencies:
