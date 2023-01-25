@@ -5,8 +5,8 @@ import pytest
 from asgi_lifespan import LifespanManager
 from httpx import AsyncClient
 
-# Setup env before importing anything
-os.environ['DATABASE_NAME'] = 'sleipnir_test'
+# Setup env before importing app as it will use these to connect to the db
+os.environ['DATABASE_NAME'] = 'example_app_test_db'
 os.environ['RESET_DATABASE'] = 'TRUE'
 
 from src.main import app

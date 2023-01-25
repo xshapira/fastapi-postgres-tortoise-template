@@ -3,6 +3,7 @@
 Basic template that includes:
 
 * FastAPI
+* PostgreSQL
 * TortoiseORM (Aerich for migrations)
 
 Ready to go.
