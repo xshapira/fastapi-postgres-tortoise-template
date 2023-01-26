@@ -38,7 +38,7 @@ async def create(item: NoteCreate) -> NoteGet:
 async def get(id: int) -> NoteGet:
     try:
         db_item = await Note.get(id=id)
-        return NoteGet.from_tortoise_orm(db_item)
+        return await NoteGet.from_tortoise_orm(db_item)
     except DoesNotExist as ex:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
