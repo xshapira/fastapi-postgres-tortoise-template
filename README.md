@@ -33,27 +33,39 @@ Requires:
 
 Clone repo:
 
-`git clone git@github.com:pavdwest/fastapi-postgres-tortoise-template.git`
+```bash
+    git clone git@github.com:pavdwest/fastapi-postgres-tortoise-template.git
+```
 
 NB! Navigate to app folder:
 
-`cd fastapi-postgres-tortoise-template/services/backend/app`
+```bash
+    cd fastapi-postgres-tortoise-template/services/backend/app
+```
 
 Create & Activate virtual environment:
 
-`python -m venv ./ignored/venv`
+```bash
+    python -m venv ./ignored/venv
+```
 
-`source ./ignored/venv/bin/activate`
+```bash
+    source ./ignored/venv/bin/activate
+```
 
 Install dependencies:
 
-`pip install requirements/base.txt`
+```bash
+    pip install requirements/base.txt
+```
 
 Note that versions are intentionally omitted - lock them down when you start.
 
 Run:
 
-`uvicorn src.main:app --reload --port 8000`
+```bash
+    uvicorn src.main:app --reload --port 8000
+```
 
 ## View Swagger docs
 
@@ -63,8 +75,10 @@ Run:
 
 NB! Navigate to the app folder:
 
-`cd fastapi-postgres-tortoise-template/services/backend/app`
-`pytest -vv`
+```bash
+    cd fastapi-postgres-tortoise-template/services/backend/app
+    pytest -vv
+```
 
 # Adding New Models/Modules
 
@@ -72,7 +86,9 @@ NB! Navigate to the app folder:
 
 Definition:
 
-`src/modules/thingy/models.py`
+```bash
+    src/modules/thingy/models.py
+```
 
 ORM:
 
