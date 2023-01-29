@@ -1,21 +1,20 @@
-from tortoise.contrib.pydantic import pydantic_model_creator
-
+from src.core.schemas import generate_app_schema, AppSchemaGet, AppSchemaCreate
 from src.core.schemas import AppSchema
 from src.modules.note.models import Note
 
 
-NoteCreate = pydantic_model_creator(
+NoteCreate = generate_app_schema(
     Note,
-    name='NoteCreate',
+    app_schema_base_class=AppSchemaCreate,
     exclude_readonly=True,
     exclude=[
     ]
 )
 
 
-NoteGet = pydantic_model_creator(
+NoteGet = generate_app_schema(
     Note,
-    name='NoteGet',
+    app_schema_base_class=AppSchemaGet,
     exclude_readonly=True,
     exclude=[
     ]

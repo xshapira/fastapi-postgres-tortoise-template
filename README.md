@@ -9,6 +9,8 @@ Basic template that includes:
 Ready to go.
 
 * Project layout is inspired by [zhanymkanov/fastapi-best-practices](https://github.com/zhanymkanov/fastapi-best-practices#1-project-structure-consistent--predictable) but deviates slightly by putting all 'modules' into a sub-folder and core/shared concerns in the core folder.
+* Can be run locally or with docker-compose
+* Has stubbed base classes for your app (AppModel, AppService, AppSchema etc.)
 * The database is created and migrations run automatically on startup. No messing around with Aerich or migration tools unless you want to create a new model.
 * The test database is a real database but is reset with each run (public schema dropped & recreated), so it's ephemeral for all practical purposes.
 
@@ -99,8 +101,8 @@ ORM:
 
 ## Schemas
 
-`src/modules/thingy/schemas.py`
+`src/modules/thingy/schemas.py` -> Create your Get, Create, Update etc. schemas
 
 ## Routes
 
-`src/modules/thingy/routes.py`
+`src/modules/thingy/routes.py` -> Create your Router, CRUD and other routes, and add the router to `mount_routes()` in `src/core/route_manager.py`
